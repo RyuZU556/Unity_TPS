@@ -1763,6 +1763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullpup 12GA
       objectReference: {fileID: 0}
+    - target: {fileID: 2729097068249369446, guid: 8e0f61ec484e3004297efb240df69af4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3356417566550528476, guid: 8e0f61ec484e3004297efb240df69af4, type: 3}
       propertyPath: m_RootOrder
       value: 5
