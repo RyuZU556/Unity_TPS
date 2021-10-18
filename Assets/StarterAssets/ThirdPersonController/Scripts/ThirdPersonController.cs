@@ -60,11 +60,11 @@ namespace StarterAssets
 		[Tooltip("For locking the camera position on all axis")]
 		public bool LockCameraPosition = false;
 
-		// cinemachine
+		// シネマシン
 		private float _cinemachineTargetYaw;
 		private float _cinemachineTargetPitch;
 
-		// player
+		//プレイヤー
 		private float _speed;
 		private float _animationBlend;
 		private float _targetRotation = 0.0f;
@@ -72,11 +72,11 @@ namespace StarterAssets
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
 
-		// timeout deltatime
+		//デルタタイム
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-		// animation IDs
+		//アニメーションID
 		private int _animIDSpeed;
 		private int _animIDGrounded;
 		private int _animIDJump;
@@ -95,7 +95,7 @@ namespace StarterAssets
 
 		private void Awake()
 		{
-			// get a reference to our main camera
+			//メインカメラへの参照を取得します
 			if (_mainCamera == null)
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
@@ -110,7 +110,7 @@ namespace StarterAssets
 
 			AssignAnimationIDs();
 
-			// reset our timeouts on start
+			//開始時にタイムアウトをリセットする
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 		}
@@ -140,7 +140,7 @@ namespace StarterAssets
 
 		private void GroundedCheck()
 		{
-			// set sphere position, with offset
+			//球の位置をオフセット付きで設定
 			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
 			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
 
