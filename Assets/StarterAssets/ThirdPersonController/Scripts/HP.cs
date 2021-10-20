@@ -6,7 +6,7 @@ public class HP : MonoBehaviour
 {
     private Animator animator;
     public int hitPoint = 100;  //HP
-    public AudioClip shotSound;
+    //public AudioClip shotSound;
     bool isdeath;
     bool isdamage;
 
@@ -21,7 +21,7 @@ public class HP : MonoBehaviour
         if (hitPoint <= 0)
         {
             animator.SetBool("isdeath",true);
-            AudioSource.PlayClipAtPoint(shotSound, transform.position);
+            //AudioSource.PlayClipAtPoint(shotSound, transform.position);
             Destroy(gameObject, 2.5f);
         }
     }

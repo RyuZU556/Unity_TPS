@@ -3,9 +3,6 @@
 using UnityEngine.InputSystem;
 #endif
 
-/* Note: animations are called via the controller for both the character and capsule using animator null checks
- */
-
 namespace StarterAssets
 {
 	[RequireComponent(typeof(CharacterController))]
@@ -144,7 +141,7 @@ namespace StarterAssets
 			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
 			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
 
-			// update animator if using character
+			//キャラクターを使用している場合はアニメーターを更新する
 			if (_hasAnimator)
 			{
 				_animator.SetBool(_animIDGrounded, Grounded);
@@ -153,46 +150,45 @@ namespace StarterAssets
 
 		private void CameraRotation()
 		{
-			// if there is an input and camera position is not fixed
+			//入力があり、カメラの位置が固定されていない場合
 			if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
 			{
 				_cinemachineTargetYaw += _input.look.x * Time.deltaTime * Sensitivity;
 				_cinemachineTargetPitch += _input.look.y * Time.deltaTime * Sensitivity;
 			}
 
-			// clamp our rotations so our values are limited 360 degrees
+			//回転をクランプして、値が360度に制限されるようにします
 			_cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
 			_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-			// Cinemachine will follow this target
+			//Cinemachineはこの目標に従います
 			CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride, _cinemachineTargetYaw, 0.0f);
 		}
 
 		private void Move()
 		{
-			// set target speed based on move speed, sprint speed and if sprint is pressed
+			//移動速度、スプリント速度、およびスプリントが押された場合に基づいて目標速度を設定します
 			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
-			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
+			//取り外し、交換、反復が簡単にできるように設計された単純な加速と減速
 
-			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
-			// if there is no input, set the target speed to 0
+			//入力がない場合は、目標速度を0に設定します
 			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 
-			// a reference to the players current horizontal velocity
+			//プレーヤーの現在の水平速度への参照
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 
 			float speedOffset = 0.1f;
 			float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
 
-			// accelerate or decelerate to target speed
+			//目標速度まで加速または減速します
 			if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
 			{
-				// creates curved result rather than a linear one giving a more organic speed change
-				// note T in Lerp is clamped, so we don't need to clamp our speed
+				//より有機的な速度変化を与える線形ではなく湾曲した結果を作成します
+				//LerpのTはクランプされているため、速度をクランプする必要はありません
 				_speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
 
-				// round speed to 3 decimal places
+				//小数点以下第3位までの丸め速度
 				_speed = Mathf.Round(_speed * 1000f) / 1000f;
 			}
 			else
@@ -201,17 +197,16 @@ namespace StarterAssets
 			}
 			_animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
 
-			// normalise input direction
+			//入力方向を正規化する
 			Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
 
-			// note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
-			// if there is a move input rotate player when the player is moving
+			//移動入力がある場合、プレーヤーが移動しているときにプレーヤーを回転させます
 			if (_input.move != Vector2.zero)
 			{
 				_targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
 				float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, RotationSmoothTime);
 
-				// rotate to face input direction relative to camera position
+				//カメラの位置を基準にして入力方向を向くように回転します
 				if (_rotateOnMove)
 				{
 					transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
@@ -221,10 +216,10 @@ namespace StarterAssets
 
 			Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
-			// move the player
+			//プレーヤーを動かす
 			_controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
-			// update animator if using character
+			//キャラクターを使用している場合はアニメーターを更新する
 			if (_hasAnimator)
 			{
 				_animator.SetFloat(_animIDSpeed, _animationBlend);
@@ -236,36 +231,36 @@ namespace StarterAssets
 		{
 			if (Grounded)
 			{
-				// reset the fall timeout timer
+				//落下タイムアウトタイマーをリセットする
 				_fallTimeoutDelta = FallTimeout;
 
-				// update animator if using character
+				//キャラクターを使用している場合はアニメーターを更新する
 				if (_hasAnimator)
 				{
 					_animator.SetBool(_animIDJump, false);
 					_animator.SetBool(_animIDFreeFall, false);
 				}
 
-				// stop our velocity dropping infinitely when grounded
+				//接地時に速度が無限に低下するのを防ぎます
 				if (_verticalVelocity < 0.0f)
 				{
 					_verticalVelocity = -2f;
 				}
 
-				// Jump
+				//ジャンプ
 				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
 				{
-					// the square root of H * -2 * G = how much velocity needed to reach desired height
+					//Hの平方根* -2 * G =目的の高さに到達するために必要な速度
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
-					// update animator if using character
+					//キャラクターを使用している場合はアニメーターを更新する
 					if (_hasAnimator)
 					{
 						_animator.SetBool(_animIDJump, true);
 					}
 				}
 
-				// jump timeout
+				//ジャンプタイムアウト
 				if (_jumpTimeoutDelta >= 0.0f)
 				{
 					_jumpTimeoutDelta -= Time.deltaTime;
@@ -273,28 +268,28 @@ namespace StarterAssets
 			}
 			else
 			{
-				// reset the jump timeout timer
+				//ジャンプタイムアウトタイマーをリセットする
 				_jumpTimeoutDelta = JumpTimeout;
 
-				// fall timeout
+				//タイムアウト
 				if (_fallTimeoutDelta >= 0.0f)
 				{
 					_fallTimeoutDelta -= Time.deltaTime;
 				}
 				else
 				{
-					// update animator if using character
+					//キャラクターを使用している場合はアニメーターを更新する
 					if (_hasAnimator)
 					{
 						_animator.SetBool(_animIDFreeFall, true);
 					}
 				}
 
-				// if we are not grounded, do not jump
+				//接地されていない場合はジャンプしないでください
 				_input.jump = false;
 			}
 
-			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
+			//ターミナルの下にある場合は、時間の経過とともに重力を適用します
 			if (_verticalVelocity < _terminalVelocity)
 			{
 				_verticalVelocity += Gravity * Time.deltaTime;
@@ -315,8 +310,8 @@ namespace StarterAssets
 
 			if (Grounded) Gizmos.color = transparentGreen;
 			else Gizmos.color = transparentRed;
-			
-			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
+
+			//選択したら、接地されたコライダーの位置とそれに一致する半径にギズモを描画します
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
 		public void SetSensitivity(float newSensitivity)

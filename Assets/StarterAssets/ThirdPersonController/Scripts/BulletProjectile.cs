@@ -24,12 +24,12 @@ public class BulletProjectile : MonoBehaviour
     {
         if (other.GetComponent<BulletTarget>() != null)
         {
-            // Hit target
+            //ヒットターゲット
             Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
         }
         else
         {
-            // Hit something else
+            //他の何かを打つ
             Instantiate(vfxHitRed, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);

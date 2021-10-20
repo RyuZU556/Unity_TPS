@@ -1174,14 +1174,13 @@ GameObject:
   - component: {fileID: 1141300118}
   - component: {fileID: 1141300120}
   - component: {fileID: 1141300119}
-  - component: {fileID: 1141300121}
   m_Layer: 5
   m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1141300118
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1243,22 +1242,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141300117}
   m_CullTransparentMesh: 1
---- !u!114 &1141300121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141300117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f1699d8d1582974aa90df449235bfa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ammo: {fileID: 0}
-  shellPrefab: {fileID: 6863857337172796869, guid: f5a3bec8dfb62614f9dc0016a5c9228a, type: 3}
-  shotCount: 30
-  AmmoText: {fileID: 0}
 --- !u!1 &1184613678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,8 +1623,8 @@ MonoBehaviour:
   debugTransform: {fileID: 1737193211}
   pfBulletProjectile: {fileID: 6863857337172796870, guid: f5a3bec8dfb62614f9dc0016a5c9228a, type: 3}
   spawnBulletPosition: {fileID: 13076920}
-  vfxHitGreen: {fileID: 613433886817584985, guid: 6a009305e56510043b41511f59e5e551, type: 3}
-  vfxHitRed: {fileID: 613433886817584985, guid: fe81d415561a5cc449e53fde6303522a, type: 3}
+  vfxHitGreen: {fileID: 400002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
+  vfxHitRed: {fileID: 400002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
 --- !u!1001 &1402827283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1929,6 +1912,10 @@ PrefabInstance:
     - target: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Name
       value: PlayerArmature
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: JumpHeight
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918493, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Enabled
