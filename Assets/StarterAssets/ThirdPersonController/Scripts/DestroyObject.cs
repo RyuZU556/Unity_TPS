@@ -23,6 +23,8 @@ public class DestroyObject : MonoBehaviour
             //HPクラスのDamage関数を呼び出す
             hp.Damage(damage);
 
+            Debug.Log("敵と弾が衝突しました!!");
+
             //ぶつかってきたオブジェクトを破壊する.
             Destroy(other.gameObject);
         }
