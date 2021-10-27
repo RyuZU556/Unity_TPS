@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HP : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class HP : MonoBehaviour
             animator.SetBool("isdeath",true);
             //AudioSource.PlayClipAtPoint(shotSound, transform.position);
             Destroy(gameObject, 2.5f);
+            SceneManager.LoadScene("GameClear");
         }
     }
 
