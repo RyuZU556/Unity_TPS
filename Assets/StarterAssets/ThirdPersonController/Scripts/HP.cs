@@ -10,6 +10,7 @@ public class HP : MonoBehaviour
     //public AudioClip shotSound;
     bool isdeath;
     bool isdamage;
+    float seconds;
 
     void Start()
     {
@@ -24,7 +25,12 @@ public class HP : MonoBehaviour
             animator.SetBool("isdeath",true);
             //AudioSource.PlayClipAtPoint(shotSound, transform.position);
             Destroy(gameObject, 2.5f);
-            SceneManager.LoadScene("GameClear");
+            seconds += Time.deltaTime;
+            if (seconds >= 2)
+            {
+                seconds = 0;
+                SceneManager.LoadScene("GameClear");
+            }
         }
     }
 
