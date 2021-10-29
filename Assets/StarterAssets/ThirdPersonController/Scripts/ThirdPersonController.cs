@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 #endif
 
 namespace StarterAssets
@@ -79,6 +80,7 @@ namespace StarterAssets
 		private int _animIDJump;
 		private int _animIDFreeFall;
 		private int _animIDMotionSpeed;
+		private int _animIDDeath;
 
 		private Animator _animator;
 		private CharacterController _controller;
@@ -89,6 +91,8 @@ namespace StarterAssets
 		private const float _threshold = 0.01f;
 
 		private bool _hasAnimator;
+
+		Slider slider;
 
 		private void Awake()
 		{
@@ -110,6 +114,9 @@ namespace StarterAssets
 			//開始時にタイムアウトをリセットする
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+
+			slider = GameObject.Find("Slider").GetComponent<Slider>();
+			slider.value = 1;
 		}
 
 		private void Update()
@@ -133,6 +140,7 @@ namespace StarterAssets
 			_animIDJump = Animator.StringToHash("Jump");
 			_animIDFreeFall = Animator.StringToHash("FreeFall");
 			_animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+			_animIDDeath = Animator.StringToHash("Death");
 		}
 
 		private void GroundedCheck()
@@ -323,5 +331,24 @@ namespace StarterAssets
         {
 			_rotateOnMove = newRotateOnMove;
         }
+
+		private void OnControllerColliderHit(ControllerColliderHit hit)
+		{
+            if (hit.gameObject.tag == "Enemy")
+            {
+                slider.value -= 0.1f;
+                Debug.Log("Hit"); // ログを表示する
+				if (slider.value <= 0f)
+                {
+					_animator.SetBool("Death", true);
+                }
+            }
+			if (hit.gameObject.tag == "Item")
+            {
+				slider.value += 0.5f;
+				Debug.Log("Heel");
+				hit.gameObject.SetActive(false);
+            }
+		}
 	}
 }

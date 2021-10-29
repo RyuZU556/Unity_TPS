@@ -29,7 +29,7 @@ public class HP : MonoBehaviour
             if (seconds >= 2)
             {
                 seconds = 0;
-                SceneManager.LoadScene("GameClear");
+                //SceneManager.LoadScene("GameClear");
             }
         }
     }

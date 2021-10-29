@@ -6,6 +6,11 @@ TagManager:
   tags:
   - CinemachineTarget
   - Shell
+  - FxTemporaire
+  - Effect
+  - Projectile
+  - Enemy
+  - Item
   layers:
   - Default
   - TransparentFX
