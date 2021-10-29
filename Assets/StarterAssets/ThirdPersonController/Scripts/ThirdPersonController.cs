@@ -2,6 +2,7 @@
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 #endif
 
 namespace StarterAssets
@@ -341,7 +342,8 @@ namespace StarterAssets
 				if (slider.value <= 0f)
                 {
 					_animator.SetBool("Death", true);
-                }
+					SceneManager.LoadScene("GameOver");
+				}
             }
 			if (hit.gameObject.tag == "Item")
             {
