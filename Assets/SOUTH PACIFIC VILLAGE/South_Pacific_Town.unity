@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.671
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3737393, g: 0.41580516, b: 0.47707707, a: 0.671}
+  m_IndirectSpecularColor: {r: 0.3737395, g: 0.4158055, b: 0.47707748, a: 0.671}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -922,6 +922,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735424229}
     m_Modifications:
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.045615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.7391615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000005727153
+      objectReference: {fileID: 0}
     - target: {fileID: 4191143573932645857, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
       propertyPath: m_Name
       value: Shop (5)
@@ -2921,6 +2933,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735424229}
     m_Modifications:
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.045617
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.7391634
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000012167807
+      objectReference: {fileID: 0}
     - target: {fileID: 4191143573932645857, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
       propertyPath: m_Name
       value: Shop (3)
@@ -3165,8 +3189,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.1600428, y: 0, z: 0.000000008477116}
+    m_Extent: {x: 0.2700053, y: 3.0762117, z: 0.00000016882422}
   m_DirtyAABB: 0
 --- !u!183 &139061830
 Cloth:
@@ -4906,8 +4930,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.1600428, y: 0, z: 0.000000008477116}
+    m_Extent: {x: 0.2700053, y: 3.0762117, z: 0.00000016882422}
   m_DirtyAABB: 0
 --- !u!183 &202097822
 Cloth:
@@ -5253,8 +5277,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &213343712
 PrefabInstance:
@@ -5372,8 +5396,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.1600428, y: 0, z: 0.000000008477116}
+    m_Extent: {x: 0.2700053, y: 3.0762117, z: 0.00000016882422}
   m_DirtyAABB: 0
 --- !u!183 &213343715
 Cloth:
@@ -6348,8 +6372,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &242840902
 PrefabInstance:
@@ -7101,6 +7125,30 @@ PrefabInstance:
     - target: {fileID: 8242751263280796106, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
       propertyPath: m_Name
       value: shop2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264930176007, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 4.268137
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264930176007, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.7391615
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264930176007, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000005536418
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264953592655, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.045617
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264953592655, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.7391624
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264953592655, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000014202143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
@@ -8789,6 +8837,18 @@ PrefabInstance:
     - target: {fileID: 3068136262466890127, guid: 67bc51f81640d324eaefb36eac1ae850, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068136262550046378, guid: 67bc51f81640d324eaefb36eac1ae850, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 4.600742
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068136262550046378, guid: 67bc51f81640d324eaefb36eac1ae850, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 2.8199337
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068136262550046378, guid: 67bc51f81640d324eaefb36eac1ae850, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000011666668
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67bc51f81640d324eaefb36eac1ae850, type: 3}
@@ -10777,6 +10837,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 445345010}
     m_Modifications:
+    - target: {fileID: 7849646243300748432, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.9870498
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646243300748432, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 1.9870493
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646243300748432, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.00000019040273
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646243699758868, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.4068608
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646243699758868, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 1.40686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646243699758868, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.00000015368806
+      objectReference: {fileID: 0}
     - target: {fileID: 7849646243699758868, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -10828,6 +10912,18 @@ PrefabInstance:
     - target: {fileID: 7849646244023450117, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646244180355510, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.9870495
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646244180355510, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 1.9870491
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646244180355510, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000001738624
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
@@ -14467,8 +14563,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &451743193
 PrefabInstance:
@@ -16411,8 +16507,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &513180484
 PrefabInstance:
@@ -17015,8 +17111,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &528776502
 PrefabInstance:
@@ -17025,6 +17121,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735424229}
     m_Modifications:
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.0456176
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.739164
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000012947086
+      objectReference: {fileID: 0}
     - target: {fileID: 4191143573932645857, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
       propertyPath: m_Name
       value: Shop (1)
@@ -18269,8 +18377,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &557244858
 PrefabInstance:
@@ -24112,8 +24220,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.1600428, y: 0, z: 0.000000008477116}
+    m_Extent: {x: 0.2700053, y: 3.0762117, z: 0.00000016882422}
   m_DirtyAABB: 0
 --- !u!183 &743252438
 Cloth:
@@ -24565,8 +24673,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &752789225
 PrefabInstance:
@@ -24963,6 +25071,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735424229}
     m_Modifications:
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.045615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.7391615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000005727153
+      objectReference: {fileID: 0}
     - target: {fileID: 4191143573932645857, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
       propertyPath: m_Name
       value: Shop
@@ -26056,6 +26176,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735424229}
     m_Modifications:
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.045617
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.7391634
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000012167807
+      objectReference: {fileID: 0}
     - target: {fileID: 4191143573932645857, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
       propertyPath: m_Name
       value: Shop (4)
@@ -26122,6 +26254,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 445345010}
     m_Modifications:
+    - target: {fileID: 7849646243300748432, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.9870498
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646243300748432, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 1.9870493
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646243300748432, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.00000019040273
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646243699758868, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.4068608
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646243699758868, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 1.40686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646243699758868, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.00000015368806
+      objectReference: {fileID: 0}
     - target: {fileID: 7849646244023450114, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
       propertyPath: m_Name
       value: Wire
@@ -26169,6 +26325,18 @@ PrefabInstance:
     - target: {fileID: 7849646244023450117, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646244180355510, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.9870495
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646244180355510, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 1.9870491
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849646244180355510, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000001738624
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52705d9caa150ea4a852c17859f6b46e, type: 3}
@@ -26377,6 +26545,30 @@ PrefabInstance:
     - target: {fileID: 8200919833218949533, guid: 75c8724e6c0603948a621dc3f43fc366, type: 3}
       propertyPath: m_Name
       value: shed 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200919833274664411, guid: 75c8724e6c0603948a621dc3f43fc366, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.0238485
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200919833274664411, guid: 75c8724e6c0603948a621dc3f43fc366, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 3.1907556
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200919833274664411, guid: 75c8724e6c0603948a621dc3f43fc366, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000008412255
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200919833967569922, guid: 75c8724e6c0603948a621dc3f43fc366, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 4.6007423
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200919833967569922, guid: 75c8724e6c0603948a621dc3f43fc366, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 2.819935
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200919833967569922, guid: 75c8724e6c0603948a621dc3f43fc366, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000018819226
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75c8724e6c0603948a621dc3f43fc366, type: 3}
@@ -27684,8 +27876,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.1600428, y: 0, z: 0.000000008477116}
+    m_Extent: {x: 0.2700053, y: 3.0762117, z: 0.00000016882422}
   m_DirtyAABB: 0
 --- !u!183 &854765926
 Cloth:
@@ -27969,8 +28161,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &859515712
 PrefabInstance:
@@ -28212,6 +28404,30 @@ PrefabInstance:
     - target: {fileID: 8242751263280796106, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
       propertyPath: m_Name
       value: shop2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264930176007, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 4.2681375
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264930176007, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.739162
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264930176007, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.000000283851
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264953592655, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.045617
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264953592655, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.739163
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264953592655, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000007794637
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
@@ -31177,8 +31393,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &959002556
 PrefabInstance:
@@ -33773,8 +33989,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &1044197396
 PrefabInstance:
@@ -35526,8 +35742,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.1600428, y: 0, z: 0.000000008477116}
+    m_Extent: {x: 0.2700053, y: 3.0762117, z: 0.00000016882422}
   m_DirtyAABB: 0
 --- !u!183 &1097781225
 Cloth:
@@ -40435,6 +40651,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9140852465375919586, guid: 8cc861d4bbf2105468f6df8703ee6e3d, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 7.8429832
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140852465375919586, guid: 8cc861d4bbf2105468f6df8703ee6e3d, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 3.9046178
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140852465375919586, guid: 8cc861d4bbf2105468f6df8703ee6e3d, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000004915083
+      objectReference: {fileID: 0}
     - target: {fileID: 9140852465375919587, guid: 8cc861d4bbf2105468f6df8703ee6e3d, type: 3}
       propertyPath: m_RandomAcceleration.z
       value: 3
@@ -40538,6 +40766,18 @@ PrefabInstance:
     - target: {fileID: 9140852465899663288, guid: 8cc861d4bbf2105468f6df8703ee6e3d, type: 3}
       propertyPath: m_Name
       value: Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140852466480423609, guid: 8cc861d4bbf2105468f6df8703ee6e3d, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 4.1841984
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140852466480423609, guid: 8cc861d4bbf2105468f6df8703ee6e3d, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.1842
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140852466480423609, guid: 8cc861d4bbf2105468f6df8703ee6e3d, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000003657943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cc861d4bbf2105468f6df8703ee6e3d, type: 3}
@@ -41262,8 +41502,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &1323581372
 PrefabInstance:
@@ -45753,8 +45993,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &1444434822
 PrefabInstance:
@@ -48635,6 +48875,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5227244679303701558, guid: 81f3e7dbcc966964ab02dd4c83f5e08e, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.623527
+      objectReference: {fileID: 0}
+    - target: {fileID: 5227244679303701558, guid: 81f3e7dbcc966964ab02dd4c83f5e08e, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 5.6235275
+      objectReference: {fileID: 0}
+    - target: {fileID: 5227244679303701558, guid: 81f3e7dbcc966964ab02dd4c83f5e08e, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000020041155
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f3e7dbcc966964ab02dd4c83f5e08e, type: 3}
 --- !u!4 &1551508654 stripped
@@ -49376,8 +49628,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.1600428, y: 0, z: 0.000000008477116}
+    m_Extent: {x: 0.2700053, y: 3.0762117, z: 0.00000016882422}
   m_DirtyAABB: 0
 --- !u!183 &1563276396
 Cloth:
@@ -53812,6 +54064,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735424229}
     m_Modifications:
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.045615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.7391615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191143573515688829, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.00000029023923
+      objectReference: {fileID: 0}
     - target: {fileID: 4191143573932645857, guid: a2b8bdb015709e64f8825063bb243c7b, type: 3}
       propertyPath: m_Name
       value: Shop (2)
@@ -55354,6 +55618,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735424229}
     m_Modifications:
+    - target: {fileID: 6322209820181972583, guid: 269280c584e54f0429f91bb2ee83d276, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 4.7255263
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322209820181972583, guid: 269280c584e54f0429f91bb2ee83d276, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 5.176762
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322209820181972583, guid: 269280c584e54f0429f91bb2ee83d276, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000003985618
+      objectReference: {fileID: 0}
     - target: {fileID: 6322209820198444586, guid: 269280c584e54f0429f91bb2ee83d276, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -55401,6 +55677,18 @@ PrefabInstance:
     - target: {fileID: 6322209820198444590, guid: 269280c584e54f0429f91bb2ee83d276, type: 3}
       propertyPath: m_Name
       value: MeetingPlace
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322209820888126147, guid: 269280c584e54f0429f91bb2ee83d276, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 4.7255263
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322209820888126147, guid: 269280c584e54f0429f91bb2ee83d276, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 5.176762
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322209820888126147, guid: 269280c584e54f0429f91bb2ee83d276, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000003985618
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 269280c584e54f0429f91bb2ee83d276, type: 3}
@@ -58538,8 +58826,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &1835798074
 PrefabInstance:
@@ -59456,8 +59744,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.1600428, y: 0, z: 0.000000008477116}
+    m_Extent: {x: 0.2700053, y: 3.0762117, z: 0.00000016882422}
   m_DirtyAABB: 0
 --- !u!183 &1872292920
 Cloth:
@@ -61798,8 +62086,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &1944269298
 PrefabInstance:
@@ -64708,8 +64996,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &2046489545
 PrefabInstance:
@@ -65625,8 +65913,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &2080400096
 PrefabInstance:
@@ -67337,8 +67625,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.008888889, y: 0, z: 0}
-    m_Extent: {x: 0.0011111109, y: 0.01, z: 8.7422775e-10}
+    m_Center: {x: 2.6554759, y: 0, z: 0.00000015258789}
+    m_Extent: {x: 0.33193445, y: 3.7506661, z: 0.00000022531694}
   m_DirtyAABB: 0
 --- !u!1001 &2124593879
 PrefabInstance:
@@ -68358,6 +68646,30 @@ PrefabInstance:
     - target: {fileID: 8242751263280796106, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264930176007, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 4.2681365
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264930176007, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.739161
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264930176007, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000014056104
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264953592655, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 5.045616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264953592655, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.739162
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242751264953592655, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0000011186673
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75821fadbf8c93548a5acda96bab2d6f, type: 3}

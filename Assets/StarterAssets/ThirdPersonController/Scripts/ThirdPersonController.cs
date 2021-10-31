@@ -13,51 +13,30 @@ namespace StarterAssets
 #endif
 	public class ThirdPersonController : MonoBehaviour
 	{
-		[Header("Player")]
-		[Tooltip("Move speed of the character in m/s")]
-		public float MoveSpeed = 2.0f;
-		[Tooltip("Sprint speed of the character in m/s")]
-		public float SprintSpeed = 5.335f;
-		[Tooltip("How fast the character turns to face movement direction")]
-		[Range(0.0f, 0.3f)]
-		public float RotationSmoothTime = 0.12f;
-		[Tooltip("Acceleration and deceleration")]
-		public float SpeedChangeRate = 10.0f;
+		//プレイヤーヘッダー
+		public float MoveSpeed = 2.0f;              //キャラクターの移動速度
+		public float SprintSpeed = 5.335f;          //キャラクターの全力疾走速度
+		public float RotationSmoothTime = 0.12f;    //キャラクターが顔の移動方向に回転する速度
+		public float SpeedChangeRate = 10.0f;       //加速と減速
 		public float Sensitivity = 1f;
 
-		[Space(10)]
-		[Tooltip("The height the player can jump")]
-		public float JumpHeight = 1.2f;
-		[Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
-		public float Gravity = -15.0f;
+		public float JumpHeight = 1.2f;             //プレイヤーがジャンプできる高さ
+		public float Gravity = -15.0f;				//重力
 
-		[Space(10)]
-		[Tooltip("Time required to pass before being able to jump again. Set to 0f to instantly jump again")]
-		public float JumpTimeout = 0.50f;
-		[Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
-		public float FallTimeout = 0.15f;
+		public float JumpTimeout = 0.50f;           //再びジャンプできるようになるまでに経過するのに必要な時間
+		public float FallTimeout = 0.15f;           //落下状態に入るまでの経過時間
 
-		[Header("Player Grounded")]
-		[Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
-		public bool Grounded = true;
-		[Tooltip("Useful for rough ground")]
-		public float GroundedOffset = -0.14f;
-		[Tooltip("The radius of the grounded check. Should match the radius of the CharacterController")]
-		public float GroundedRadius = 0.28f;
-		[Tooltip("What layers the character uses as ground")]
-		public LayerMask GroundLayers;
+		public bool Grounded = true;                //キャラクターが接地されているかどうか
+		public float GroundedOffset = -0.14f;       //荒れた地面に便利
+		public float GroundedRadius = 0.28f;        //接地されたチェックの半径
+		public LayerMask GroundLayers;              //キャラクターが地面として使用するレイヤー
 
-		[Header("Cinemachine")]
-		[Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
-		public GameObject CinemachineCameraTarget;
-		[Tooltip("How far in degrees can you move the camera up")]
-		public float TopClamp = 70.0f;
-		[Tooltip("How far in degrees can you move the camera down")]
-		public float BottomClamp = -30.0f;
-		[Tooltip("Additional degress to override the camera. Useful for fine tuning camera position when locked")]
-		public float CameraAngleOverride = 0.0f;
-		[Tooltip("For locking the camera position on all axis")]
-		public bool LockCameraPosition = false;
+		//シネマシンヘッダー
+		public GameObject CinemachineCameraTarget;  //カメラがフォローするCinemachine仮想カメラに設定されたフォローターゲット
+		public float TopClamp = 70.0f;              //カメラをどれだけ上に動かすか
+		public float BottomClamp = -30.0f;          //カメラをどれだけ下に動かすか
+		public float CameraAngleOverride = 0.0f;    //カメラをオーバーライドするための追加の度
+		public bool LockCameraPosition = false;     //すべての軸でカメラの位置をロックするため
 
 		// シネマシン
 		private float _cinemachineTargetYaw;
@@ -341,7 +320,7 @@ namespace StarterAssets
                 Debug.Log("Hit"); // ログを表示する
 				if (slider.value <= 0f)
                 {
-					_animator.SetBool("Death", true);
+					//_animator.SetBool("Death", true);
 					SceneManager.LoadScene("GameOver");
 				}
             }
