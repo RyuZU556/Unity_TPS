@@ -11,6 +11,7 @@ TagManager:
   - Projectile
   - Enemy
   - Item
+  - WayPoints
   layers:
   - Default
   - TransparentFX
