@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Item
   - WayPoints
+  - MAST_Holder
   layers:
   - Default
   - TransparentFX
