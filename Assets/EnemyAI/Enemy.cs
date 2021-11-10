@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public int enemyHP = 100;
     public GameObject projectile;
     public Transform projectilePoint;
+
+    public Animator animator;
 
     public void Shoot()
     {
@@ -19,6 +22,20 @@ public class Enemy : MonoBehaviour
         if (hit.gameObject.tag == "Player")
         {
             Destroy(projectile);
+        }
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        enemyHP -= damageAmount;
+        if (enemyHP <= 0) 
+        {
+            animator.SetTrigger("death");
+            GetComponent<CapsuleCollider>().enabled = false;
+        }
+        else
+        {
+            animator.SetTrigger("damage");
         }
     }
 }

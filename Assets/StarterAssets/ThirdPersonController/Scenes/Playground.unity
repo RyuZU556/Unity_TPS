@@ -481,7 +481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &321897997
 GameObject:
@@ -657,8 +657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c33c6c90fa828b49a1cc17660b2768f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHP: 100
   projectile: {fileID: 1996103488644172427, guid: 5a3708eb0ede0e940bde4c69194b88ea, type: 3}
   projectilePoint: {fileID: 816799858}
+  animator: {fileID: 334947284}
 --- !u!195 &334947283
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -681,6 +683,11 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &334947284 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 64228339575d99f4e994fd1785d57a25, type: 3}
+  m_PrefabInstance: {fileID: 2120149828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!136 &334947286
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1591,8 +1598,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c33c6c90fa828b49a1cc17660b2768f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHP: 100
   projectile: {fileID: 1996103488644172427, guid: 5a3708eb0ede0e940bde4c69194b88ea, type: 3}
   projectilePoint: {fileID: 1369475401}
+  animator: {fileID: 972634131}
+--- !u!95 &972634131 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 59d594f84a784354394beccce9cc331d, type: 3}
+  m_PrefabInstance: {fileID: 1866004220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!136 &972634133
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2369,8 +2383,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c33c6c90fa828b49a1cc17660b2768f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHP: 100
   projectile: {fileID: 1996103488644172427, guid: 5a3708eb0ede0e940bde4c69194b88ea, type: 3}
   projectilePoint: {fileID: 1307938114}
+  animator: {fileID: 1624080435}
+--- !u!95 &1624080435 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 7fae8be938091bb409c4389712527d33, type: 3}
+  m_PrefabInstance: {fileID: 1938199312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!195 &1624080436
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3353,7 +3374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 64228339575d99f4e994fd1785d57a25, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 64228339575d99f4e994fd1785d57a25, type: 3}
       propertyPath: m_LocalScale.x
