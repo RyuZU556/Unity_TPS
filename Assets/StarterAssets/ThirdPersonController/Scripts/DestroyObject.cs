@@ -16,7 +16,6 @@ public class DestroyObject : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
         //ぶつかったオブジェクトのTagにShellという名前が書いてあったならば（条件）.
         if (other.CompareTag("Shell"))
         {

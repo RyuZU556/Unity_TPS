@@ -6,7 +6,7 @@ public class IdleBehavior : StateMachineBehaviour
 {
     float timer;
     Transform player;
-    float chaseRange = 15;
+    float ChaseRange = 15;
     //OnStateEnterは、遷移が開始され、ステートマシンがこの状態の評価を開始したときに呼び出されます
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -22,7 +22,7 @@ public class IdleBehavior : StateMachineBehaviour
             animator.SetBool("isPatrolling", true);
 
         float distance = Vector3.Distance(animator.transform.position, player.position);
-        if (distance < chaseRange)
+        if (distance < ChaseRange)
             animator.SetBool("isChasing", true);
     }
 

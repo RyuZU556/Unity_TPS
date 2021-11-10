@@ -460,7 +460,7 @@ Terrain:
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 14c782fc70b8bf849826f26aec5592c8, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: 6b911390c5825014e8377183a7837d3f, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -481,7 +481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &321897997
 GameObject:
@@ -3353,7 +3353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 64228339575d99f4e994fd1785d57a25, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 64228339575d99f4e994fd1785d57a25, type: 3}
       propertyPath: m_LocalScale.x
@@ -3431,6 +3431,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 296239254531003320, guid: d1c9de9e4f206344899fe680cafae9c4, type: 3}
+      propertyPath: vfxHitRed
+      value: 
+      objectReference: {fileID: 400002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
     - target: {fileID: 296239254531003320, guid: d1c9de9e4f206344899fe680cafae9c4, type: 3}
       propertyPath: debugTransform
       value: 
