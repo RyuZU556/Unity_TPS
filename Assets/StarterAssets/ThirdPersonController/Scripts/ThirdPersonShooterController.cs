@@ -42,12 +42,12 @@ public class ThirdPersonShooterController : MonoBehaviour
             mouseWorldPosition = raycastHit.point;
             //hitTransform = raycastHit.transform;
 
-            Enemy e = raycastHit.transform.GetComponent<Enemy>();
-            if (e != null)
-            {
-                e.TakeDamage(damageAmount);
-                return;
-            }
+            //Enemy e = raycastHit.transform.GetComponent<Enemy>();
+            //if (e != null)
+            //{
+            //    e.TakeDamage(damageAmount);
+            //    return;
+            //}
         }
         if (starterAssetsInputs.aim)
         {

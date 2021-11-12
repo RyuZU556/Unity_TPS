@@ -17,25 +17,25 @@ public class Enemy : MonoBehaviour
         rb.AddForce(transform.up * 7,ForceMode.Impulse);
     }
 
-    void OnCollisionEnter(Collision hit)
+    void OnCollisionEnter(Collision collision)
     {
-        if (hit.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            Destroy(projectile);
+            Destroy(gameObject, 0.2f);
         }
     }
 
-    public void TakeDamage(int damageAmount)
-    {
-        enemyHP -= damageAmount;
-        if (enemyHP <= 0) 
-        {
-            animator.SetTrigger("death");
-            GetComponent<CapsuleCollider>().enabled = false;
-        }
-        else
-        {
-            animator.SetTrigger("damage");
-        }
-    }
+    //public void TakeDamage(int damageAmount)
+    //{
+    //    enemyHP -= damageAmount;
+    //    if (enemyHP <= 0) 
+    //    {
+    //        animator.SetTrigger("death");
+    //        GetComponent<CapsuleCollider>().enabled = false;
+    //    }
+    //    else
+    //    {
+    //        animator.SetTrigger("damage");
+    //    }
+    //}
 }

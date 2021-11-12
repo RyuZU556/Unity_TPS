@@ -30,6 +30,7 @@ namespace StarterAssets
 		public float GroundedOffset = -0.14f;       //荒れた地面に便利
 		public float GroundedRadius = 0.28f;        //接地されたチェックの半径
 		public LayerMask GroundLayers;              //キャラクターが地面として使用するレイヤー
+		public int PlayerHP = 100;
 
 		//シネマシンヘッダー
 		public GameObject CinemachineCameraTarget;  //カメラがフォローするCinemachine仮想カメラに設定されたフォローターゲット
@@ -314,14 +315,14 @@ namespace StarterAssets
 
 		private void OnControllerColliderHit(ControllerColliderHit hit)
 		{
-            if (hit.gameObject.tag == "Enemy")
+            if (hit.gameObject.tag == "Projectile")
             {
                 slider.value -= 0.1f;
                 Debug.Log("Hit"); // ログを表示する
 				if (slider.value <= 0f)
                 {
 					//_animator.SetBool("Death", true);
-					SceneManager.LoadScene("GameOver");
+					//SceneManager.LoadScene("GameOver");
 				}
             }
 			if (hit.gameObject.tag == "Item")
@@ -331,5 +332,13 @@ namespace StarterAssets
 				hit.gameObject.SetActive(false);
             }
 		}
+
+		//void OnCollisionEnter(Collision collision)
+		//{
+		//	if (collision.gameObject.tag == "Projectile")
+		//	{
+		//		Destroy(gameObject, 0.2f);
+		//	}
+		//}
 	}
 }
