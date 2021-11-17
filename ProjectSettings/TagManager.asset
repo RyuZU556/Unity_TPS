@@ -13,6 +13,7 @@ TagManager:
   - Item
   - WayPoints
   - MAST_Holder
+  - Ground
   layers:
   - Default
   - TransparentFX

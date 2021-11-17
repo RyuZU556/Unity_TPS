@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int enemyHP = 100;
+    //public int enemyHP = 100;
     public GameObject projectile;
     public Transform projectilePoint;
 
@@ -17,13 +17,17 @@ public class Enemy : MonoBehaviour
         rb.AddForce(transform.up * 7,ForceMode.Impulse);
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Destroy(gameObject, 0.2f);
-        }
-    }
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.tag == "Ground")
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //    else if (other.gameObject.tag == "Player")
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     //public void TakeDamage(int damageAmount)
     //{
