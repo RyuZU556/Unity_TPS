@@ -36,7 +36,7 @@ namespace StarterAssets
 		public GameObject CinemachineCameraTarget;  //カメラがフォローするCinemachine仮想カメラに設定されたフォローターゲット
 		public float TopClamp = 70.0f;              //カメラをどれだけ上に動かすか
 		public float BottomClamp = -30.0f;          //カメラをどれだけ下に動かすか
-		public float CameraAngleOverride = 0.0f;    //カメラをオーバーライドするための追加の度
+		public float CameraAngleOverride = 0.0f;    //カメラをオーバーライドするための追加
 		public bool LockCameraPosition = false;     //すべての軸でカメラの位置をロックするため
 
 		// シネマシン
