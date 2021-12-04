@@ -68,6 +68,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Rowling",
+                    "type": "Button",
+                    "id": "7f57c442-ebec-4aba-b90f-025b5c1691f0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -321,6 +329,17 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Damage",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "25d08cfb-c87d-4135-9d71-e3f05890592d",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Rowling",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

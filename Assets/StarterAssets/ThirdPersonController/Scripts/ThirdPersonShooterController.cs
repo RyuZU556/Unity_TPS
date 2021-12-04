@@ -17,7 +17,6 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform vfxHitGreen;
     [SerializeField] private Transform vfxHitRed;
     public int damageAmount = 20;
-    public float MoveSpeed = 2.0f;              //キャラクターの移動速度
 
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;

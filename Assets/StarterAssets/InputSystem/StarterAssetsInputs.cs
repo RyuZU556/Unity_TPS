@@ -15,6 +15,7 @@ namespace StarterAssets
 		public bool aim;
 		public bool shoot;
 		public bool reload;
+		public bool rowling;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -63,6 +64,11 @@ namespace StarterAssets
 		{
 			ReloadInput(value.isPressed);
 		}
+
+		public void OnRowling(InputValue value)
+		{
+			RowlingInput(value.isPressed);
+		}
 #else
 		// old input sys if we do decide to have it (most likely wont)...
 #endif
@@ -101,6 +107,11 @@ namespace StarterAssets
 		public void ReloadInput(bool newReloadState)
 		{
 			reload = newReloadState;
+		}
+
+		public void RowlingInput(bool newRowlingState)
+		{
+			rowling = newRowlingState;
 		}
 
 #if !UNITY_IOS || !UNITY_ANDROID
