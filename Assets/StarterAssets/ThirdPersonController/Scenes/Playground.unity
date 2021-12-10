@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 157842676}
   - component: {fileID: 157842675}
   m_Layer: 0
-  m_Name: WayPoint (3)
+  m_Name: WayPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 325047802}
   - component: {fileID: 325047801}
   m_Layer: 0
-  m_Name: WayPoint
+  m_Name: WayPoint0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1490,7 +1490,7 @@ GameObject:
   - component: {fileID: 389900070}
   - component: {fileID: 389900069}
   m_Layer: 0
-  m_Name: WayPoint (1)
+  m_Name: WayPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2216,6 +2216,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258, type: 3}
   m_PrefabInstance: {fileID: 1967155135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &627374020 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8984878569319759399, guid: cb7b25a97c2282c41bc270751fd21721, type: 3}
+  m_PrefabInstance: {fileID: 688531036}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &632133807
 PrefabInstance:
@@ -14819,6 +14824,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 265b6e9cc3271de4da8db67e894032b7, type: 3}
   m_PrefabInstance: {fileID: 315245716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1534020900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534020901}
+  m_Layer: 6
+  m_Name: HandPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1534020901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534020900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 627374020}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1543383014 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258, type: 3}
@@ -14846,7 +14881,7 @@ GameObject:
   - component: {fileID: 1574574897}
   - component: {fileID: 1574574896}
   m_Layer: 0
-  m_Name: WayPoint (5)
+  m_Name: WayPoint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15436,7 +15471,7 @@ GameObject:
   - component: {fileID: 1638914174}
   - component: {fileID: 1638914173}
   m_Layer: 0
-  m_Name: WayPoint (4)
+  m_Name: WayPoint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15792,7 +15827,7 @@ GameObject:
   - component: {fileID: 1744387918}
   - component: {fileID: 1744387917}
   m_Layer: 0
-  m_Name: WayPoint (6)
+  m_Name: WayPoint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15937,7 +15972,7 @@ GameObject:
   - component: {fileID: 1770752455}
   - component: {fileID: 1770752454}
   m_Layer: 0
-  m_Name: WayPoint (2)
+  m_Name: WayPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16246,7 +16281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100114, guid: 59d594f84a784354394beccce9cc331d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 59d594f84a784354394beccce9cc331d, type: 3}
       propertyPath: m_RootOrder
@@ -16593,7 +16628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100114, guid: 7fae8be938091bb409c4389712527d33, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 7fae8be938091bb409c4389712527d33, type: 3}
       propertyPath: m_RootOrder
@@ -17020,31 +17055,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3356417566550528476, guid: 8e0f61ec484e3004297efb240df69af4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.47930157
+      value: 0.49457377
       objectReference: {fileID: 0}
     - target: {fileID: 3356417566550528476, guid: 8e0f61ec484e3004297efb240df69af4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.44253635
+      value: 0.45553872
       objectReference: {fileID: 0}
     - target: {fileID: 3356417566550528476, guid: 8e0f61ec484e3004297efb240df69af4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.49167225
+      value: -0.47964638
       objectReference: {fileID: 0}
     - target: {fileID: 3356417566550528476, guid: 8e0f61ec484e3004297efb240df69af4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5767929
+      value: -0.56375587
       objectReference: {fileID: 0}
     - target: {fileID: 3356417566550528476, guid: 8e0f61ec484e3004297efb240df69af4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -8.22
+      value: -5.176
       objectReference: {fileID: 0}
     - target: {fileID: 3356417566550528476, guid: 8e0f61ec484e3004297efb240df69af4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -82.754
+      value: -82.799
       objectReference: {fileID: 0}
     - target: {fileID: 3356417566550528476, guid: 8e0f61ec484e3004297efb240df69af4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -93.305
+      value: -92.916
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e0f61ec484e3004297efb240df69af4, type: 3}
@@ -17277,7 +17312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091544928}
   m_LocalRotation: {x: -0.4590443, y: 0.5052682, z: 0.5638051, w: 0.4648723}
-  m_LocalPosition: {x: 0.15715702, y: 3.2443755, z: -15.848944}
+  m_LocalPosition: {x: 0.16, y: 3.11, z: -15.87}
   m_LocalScale: {x: 36.39291, y: 36.39291, z: 36.392906}
   m_Children: []
   m_Father: {fileID: 1890203074}
