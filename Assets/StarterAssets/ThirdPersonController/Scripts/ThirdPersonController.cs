@@ -317,7 +317,7 @@ namespace StarterAssets
 		{
             if (hit.gameObject.tag == "Projectile")
             {
-                slider.value -= 0.1f;
+                slider.value -= 0.05f;
                 Debug.Log("Hit"); // ログを表示する
 				if (slider.value <= 0f)
                 {
