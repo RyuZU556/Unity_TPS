@@ -33,15 +33,15 @@ public class Enemy : MonoBehaviour
             // 敵のHPを１ずつ減少させる
             enemyHP -= 20;
 
-            //animator.SetBool("isDamage", true);
+            //animator.SetTrriger("isDamage");
 
             // ミサイルを削除する
             Destroy(other.gameObject);
 
             // 敵のHPが０になったら敵オブジェクトを破壊する。
-            if (enemyHP == 0)
+            if (enemyHP == 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
             {
-                animator.SetBool("isDeath", true);
+                animator.SetTrigger("death");
 
                 // 親オブジェクトを破壊する（ポイント；この使い方を覚えよう！）
                 //Destroy(transform.root.gameObject);
