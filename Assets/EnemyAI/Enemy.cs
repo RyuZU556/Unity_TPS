@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //public int enemyHP = 100;
     public GameObject projectile;
     public Transform projectilePoint;
+    public int enemyHP;
+    //public GameObject effectPrefab;
+    //public AudioClip destroySound;
 
     public Animator animator;
 
@@ -17,29 +19,36 @@ public class Enemy : MonoBehaviour
         rb.AddForce(transform.up * 7,ForceMode.Impulse);
     }
 
-    //private void OnCollisionEnter(Collision other)
-    //{
-    //    if (other.gameObject.tag == "Ground")
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //    else if (other.gameObject.tag == "Player")
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        // もしもぶつかった相手に「Missile」というタグ（Tag）がついていたら、
+        if (other.gameObject.CompareTag("Shell"))
+        {
+            // エフェクトを発生させる
+            //GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
 
-    //public void TakeDamage(int damageAmount)
-    //{
-    //    enemyHP -= damageAmount;
-    //    if (enemyHP <= 0) 
-    //    {
-    //        animator.SetTrigger("death");
-    //        GetComponent<CapsuleCollider>().enabled = false;
-    //    }
-    //    else
-    //    {
-    //        animator.SetTrigger("damage");
-    //    }
-    //}
+            // 0.5秒後にエフェクトを消す
+            //Destroy(effect, 0.5f);
+
+            // 敵のHPを１ずつ減少させる
+            enemyHP -= 20;
+
+            //animator.SetBool("isDamage", true);
+
+            // ミサイルを削除する
+            Destroy(other.gameObject);
+
+            // 敵のHPが０になったら敵オブジェクトを破壊する。
+            if (enemyHP == 0)
+            {
+                animator.SetBool("isDeath", true);
+
+                // 親オブジェクトを破壊する（ポイント；この使い方を覚えよう！）
+                //Destroy(transform.root.gameObject);
+
+                // 破壊の効果音を出す
+                //AudioSource.PlayClipAtPoint(destroySound, transform.position);
+            }
+        }
+    }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 2114283754330233425}
-  m_IndirectSpecularColor: {r: 0.1727952, g: 0.2600245, b: 0.36693013, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1430,6 +1430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1996103488644172427, guid: 5a3708eb0ede0e940bde4c69194b88ea, type: 3}
   projectilePoint: {fileID: 816799858}
+  enemyHP: 100
   animator: {fileID: 334947284}
 --- !u!195 &334947283
 NavMeshAgent:
@@ -8690,6 +8691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
   projectilePoint: {fileID: 0}
+  enemyHP: 0
   animator: {fileID: 0}
 --- !u!136 &972634133
 CapsuleCollider:
@@ -15343,6 +15345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1996103488644172427, guid: 5a3708eb0ede0e940bde4c69194b88ea, type: 3}
   projectilePoint: {fileID: 1307938114}
+  enemyHP: 100
   animator: {fileID: 1624080435}
 --- !u!95 &1624080435 stripped
 Animator:
@@ -15371,19 +15374,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1624080437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624080433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23bdd4bf60c812b4b8dc778eb3d7fad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHP: 100
 --- !u!136 &1624080438
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16277,7 +16267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100114, guid: 59d594f84a784354394beccce9cc331d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400114, guid: 59d594f84a784354394beccce9cc331d, type: 3}
       propertyPath: m_RootOrder
@@ -17401,7 +17391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100114, guid: 64228339575d99f4e994fd1785d57a25, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 64228339575d99f4e994fd1785d57a25, type: 3}
       propertyPath: m_LocalPosition.z
