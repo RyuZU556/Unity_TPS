@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity
     guid: e9017d5f96b9f09489b4b37e1d6eb914
+  - enabled: 1
+    path: Assets/StarterAssets/ThirdPersonController/Scenes/GameOver.unity
+    guid: 48b26ff1852d87849a0504d88146dd17
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 1cbf8004d58d04546a2392973b7601ea, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

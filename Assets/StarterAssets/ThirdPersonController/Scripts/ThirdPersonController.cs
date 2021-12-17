@@ -40,61 +40,61 @@ namespace StarterAssets
 		public bool LockCameraPosition = false;     //すべての軸でカメラの位置をロックするため
 
 		// シネマシン
-		private float _cinemachineTargetYaw;
-		private float _cinemachineTargetPitch;
+		private float cinemachineTargetYaw;
+		private float cinemachineTargetPitch;
 
 		//プレイヤー
-		private float _speed;
-		private float _animationBlend;
-		private float _targetRotation = 0.0f;
-		private float _rotationVelocity;
-		private float _verticalVelocity;
-		private float _terminalVelocity = 53.0f;
+		private float speed;
+		private float animationBlend;
+		private float targetRotation = 0.0f;
+		private float rotationVelocity;
+		private float verticalVelocity;
+		private float terminalVelocity = 53.0f;
 
 		//デルタタイム
-		private float _jumpTimeoutDelta;
-		private float _fallTimeoutDelta;
+		private float jumpTimeoutDelta;
+		private float fallTimeoutDelta;
 
 		//アニメーションID
-		private int _animIDSpeed;
-		private int _animIDGrounded;
-		private int _animIDJump;
-		private int _animIDFreeFall;
-		private int _animIDMotionSpeed;
-		private int _animIDDeath;
+		private int animIDSpeed;
+		private int animIDGrounded;
+		private int animIDJump;
+		private int animIDFreeFall;
+		private int animIDMotionSpeed;
+		private int animIDDeath;
 
-		private Animator _animator;
-		private CharacterController _controller;
-		private StarterAssetsInputs _input;
-		private GameObject _mainCamera;
-		private bool _rotateOnMove = true;
+		private Animator animator;
+		private CharacterController controller;
+		private StarterAssetsInputs input;
+		private GameObject mainCamera;
+		private bool rotateOnMove = true;
 
-		private const float _threshold = 0.01f;
+		private const float threshold = 0.01f;
 
-		private bool _hasAnimator;
+		private bool hasAnimator;
 
 		Slider slider;
 
 		private void Awake()
 		{
 			//メインカメラへの参照を取得します
-			if (_mainCamera == null)
+			if (mainCamera == null)
 			{
-				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+				mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
 		}
 
 		private void Start()
 		{
-			_hasAnimator = TryGetComponent(out _animator);
-			_controller = GetComponent<CharacterController>();
-			_input = GetComponent<StarterAssetsInputs>();
+			hasAnimator = TryGetComponent(out animator);
+			controller = GetComponent<CharacterController>();
+			input = GetComponent<StarterAssetsInputs>();
 
 			AssignAnimationIDs();
 
 			//開始時にタイムアウトをリセットする
-			_jumpTimeoutDelta = JumpTimeout;
-			_fallTimeoutDelta = FallTimeout;
+			jumpTimeoutDelta = JumpTimeout;
+			fallTimeoutDelta = FallTimeout;
 
 			slider = GameObject.Find("Slider").GetComponent<Slider>();
 			slider.value = 1;
@@ -102,7 +102,7 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			_hasAnimator = TryGetComponent(out _animator);
+			hasAnimator = TryGetComponent(out animator);
 			
 			JumpAndGravity();
 			GroundedCheck();
@@ -116,12 +116,12 @@ namespace StarterAssets
 
 		private void AssignAnimationIDs()
 		{
-			_animIDSpeed = Animator.StringToHash("Speed");
-			_animIDGrounded = Animator.StringToHash("Grounded");
-			_animIDJump = Animator.StringToHash("Jump");
-			_animIDFreeFall = Animator.StringToHash("FreeFall");
-			_animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
-			_animIDDeath = Animator.StringToHash("Death");
+			animIDSpeed = Animator.StringToHash("Speed");
+			animIDGrounded = Animator.StringToHash("Grounded");
+			animIDJump = Animator.StringToHash("Jump");
+			animIDFreeFall = Animator.StringToHash("FreeFall");
+			animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+			animIDDeath = Animator.StringToHash("Death");
 		}
 
 		private void GroundedCheck()
@@ -131,88 +131,88 @@ namespace StarterAssets
 			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
 
 			//キャラクターを使用している場合はアニメーターを更新する
-			if (_hasAnimator)
+			if (hasAnimator)
 			{
-				_animator.SetBool(_animIDGrounded, Grounded);
+				animator.SetBool(animIDGrounded, Grounded);
 			}
 		}
 
 		private void CameraRotation()
 		{
 			//入力があり、カメラの位置が固定されていない場合
-			if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
+			if (input.look.sqrMagnitude >= threshold && !LockCameraPosition)
 			{
-				_cinemachineTargetYaw += _input.look.x * Time.deltaTime * Sensitivity;
-				_cinemachineTargetPitch += _input.look.y * Time.deltaTime * Sensitivity;
+				cinemachineTargetYaw += input.look.x * Time.deltaTime * Sensitivity;
+				cinemachineTargetPitch += input.look.y * Time.deltaTime * Sensitivity;
 			}
 
 			//回転をクランプして、値が360度に制限されるようにします
-			_cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
-			_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
+			cinemachineTargetYaw = ClampAngle(cinemachineTargetYaw, float.MinValue, float.MaxValue);
+			cinemachineTargetPitch = ClampAngle(cinemachineTargetPitch, BottomClamp, TopClamp);
 
 			//Cinemachineはこの目標に従います
-			CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride, _cinemachineTargetYaw, 0.0f);
+			CinemachineCameraTarget.transform.rotation = Quaternion.Euler(cinemachineTargetPitch + CameraAngleOverride, cinemachineTargetYaw, 0.0f);
 		}
 
 		private void Move()
 		{
 			//移動速度、スプリント速度、およびスプリントが押された場合に基づいて目標速度を設定します
-			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			float targetSpeed = input.sprint ? SprintSpeed : MoveSpeed;
 
 			//取り外し、交換、反復が簡単にできるように設計された単純な加速と減速
 
 			//入力がない場合は、目標速度を0に設定します
-			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+			if (input.move == Vector2.zero) targetSpeed = 0.0f;
 
 			//プレーヤーの現在の水平速度への参照
-			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
+			float currentHorizontalSpeed = new Vector3(controller.velocity.x, 0.0f, controller.velocity.z).magnitude;
 
 			float speedOffset = 0.1f;
-			float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
+			float inputMagnitude = input.analogMovement ? input.move.magnitude : 1f;
 
 			//目標速度まで加速または減速します
 			if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
 			{
 				//より有機的な速度変化を与える線形ではなく湾曲した結果を作成します
 				//LerpのTはクランプされているため、速度をクランプする必要はありません
-				_speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
+				speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
 
 				//小数点以下第3位までの丸め速度
-				_speed = Mathf.Round(_speed * 1000f) / 1000f;
+				speed = Mathf.Round(speed * 1000f) / 1000f;
 			}
 			else
 			{
-				_speed = targetSpeed;
+				speed = targetSpeed;
 			}
-			_animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
+			animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
 
 			//入力方向を正規化する
-			Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
+			Vector3 inputDirection = new Vector3(input.move.x, 0.0f, input.move.y).normalized;
 
 			//移動入力がある場合、プレーヤーが移動しているときにプレーヤーを回転させます
-			if (_input.move != Vector2.zero)
+			if (input.move != Vector2.zero)
 			{
-				_targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
-				float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, RotationSmoothTime);
+				targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + mainCamera.transform.eulerAngles.y;
+				float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, RotationSmoothTime);
 
 				//カメラの位置を基準にして入力方向を向くように回転します
-				if (_rotateOnMove)
+				if (rotateOnMove)
 				{
 					transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
 				}
 			}
 
 
-			Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+			Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
 
 			//プレーヤーを動かす
-			_controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+			controller.Move(targetDirection.normalized * (speed * Time.deltaTime) + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime);
 
 			//キャラクターを使用している場合はアニメーターを更新する
-			if (_hasAnimator)
+			if (hasAnimator)
 			{
-				_animator.SetFloat(_animIDSpeed, _animationBlend);
-				_animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+				animator.SetFloat(animIDSpeed, animationBlend);
+				animator.SetFloat(animIDMotionSpeed, inputMagnitude);
 			}
 		}
 
@@ -221,67 +221,67 @@ namespace StarterAssets
 			if (Grounded)
 			{
 				//落下タイムアウトタイマーをリセットする
-				_fallTimeoutDelta = FallTimeout;
+				fallTimeoutDelta = FallTimeout;
 
 				//キャラクターを使用している場合はアニメーターを更新する
-				if (_hasAnimator)
+				if (hasAnimator)
 				{
-					_animator.SetBool(_animIDJump, false);
-					_animator.SetBool(_animIDFreeFall, false);
+					animator.SetBool(animIDJump, false);
+					animator.SetBool(animIDFreeFall, false);
 				}
 
 				//接地時に速度が無限に低下するのを防ぎます
-				if (_verticalVelocity < 0.0f)
+				if (verticalVelocity < 0.0f)
 				{
-					_verticalVelocity = -2f;
+					verticalVelocity = -2f;
 				}
 
 				//ジャンプ
-				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+				if (input.jump && jumpTimeoutDelta <= 0.0f)
 				{
 					//Hの平方根* -2 * G =目的の高さに到達するために必要な速度
-					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+					verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
 					//キャラクターを使用している場合はアニメーターを更新する
-					if (_hasAnimator)
+					if (hasAnimator)
 					{
-						_animator.SetBool(_animIDJump, true);
+						animator.SetBool(animIDJump, true);
 					}
 				}
 
 				//ジャンプタイムアウト
-				if (_jumpTimeoutDelta >= 0.0f)
+				if (jumpTimeoutDelta >= 0.0f)
 				{
-					_jumpTimeoutDelta -= Time.deltaTime;
+					jumpTimeoutDelta -= Time.deltaTime;
 				}
 			}
 			else
 			{
 				//ジャンプタイムアウトタイマーをリセットする
-				_jumpTimeoutDelta = JumpTimeout;
+				jumpTimeoutDelta = JumpTimeout;
 
 				//タイムアウト
-				if (_fallTimeoutDelta >= 0.0f)
+				if (fallTimeoutDelta >= 0.0f)
 				{
-					_fallTimeoutDelta -= Time.deltaTime;
+					fallTimeoutDelta -= Time.deltaTime;
 				}
 				else
 				{
 					//キャラクターを使用している場合はアニメーターを更新する
-					if (_hasAnimator)
+					if (hasAnimator)
 					{
-						_animator.SetBool(_animIDFreeFall, true);
+						animator.SetBool(animIDFreeFall, true);
 					}
 				}
 
 				//接地されていない場合はジャンプしないでください
-				_input.jump = false;
+				input.jump = false;
 			}
 
 			//ターミナルの下にある場合は、時間の経過とともに重力を適用します
-			if (_verticalVelocity < _terminalVelocity)
+			if (verticalVelocity < terminalVelocity)
 			{
-				_verticalVelocity += Gravity * Time.deltaTime;
+				verticalVelocity += Gravity * Time.deltaTime;
 			}
 		}
 
@@ -310,7 +310,7 @@ namespace StarterAssets
 
 		public void SetRotateOnMove(bool newRotateOnMove)
         {
-			_rotateOnMove = newRotateOnMove;
+			rotateOnMove = newRotateOnMove;
         }
 
 		private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -321,8 +321,8 @@ namespace StarterAssets
                 Debug.Log("Hit"); // ログを表示する
 				if (slider.value <= 0f)
                 {
-					//_animator.SetBool("Death", true);
-					//SceneManager.LoadScene("GameOver");
+					animator.SetTrigger("death");
+					Invoke("SceneChange", 4.0f);
 				}
             }
 			if (hit.gameObject.tag == "Item")
@@ -332,13 +332,9 @@ namespace StarterAssets
 				hit.gameObject.SetActive(false);
             }
 		}
-
-		//void OnCollisionEnter(Collision collision)
-		//{
-		//	if (collision.gameObject.tag == "Projectile")
-		//	{
-		//		Destroy(gameObject, 0.2f);
-		//	}
-		//}
+		void SceneChange()
+        {
+			SceneManager.LoadScene("GameOver");
+		}
 	}
 }

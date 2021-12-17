@@ -43,12 +43,17 @@ public class Enemy : MonoBehaviour
             {
                 animator.SetTrigger("death");
 
-                // 親オブジェクトを破壊する（ポイント；この使い方を覚えよう！）
-                //Destroy(transform.root.gameObject);
+                Invoke("DeleteEnemy", 4.5f);
 
                 // 破壊の効果音を出す
                 //AudioSource.PlayClipAtPoint(destroySound, transform.position);
             }
         }
+    }
+
+    void DeleteEnemy()
+    {
+        // 親オブジェクトを破壊する（ポイント；この使い方を覚えよう！）
+        Destroy(transform.root.gameObject);
     }
 }
