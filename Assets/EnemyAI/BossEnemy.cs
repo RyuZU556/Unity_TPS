@@ -31,31 +31,31 @@ public class BossEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // もしもぶつかった相手に「Missile」というタグ（Tag）がついていたら、
+        // 弾に当たったら
         if (other.gameObject.CompareTag("Shell"))
         {
-            // エフェクトを発生させる
+            // エフェクトを発生
             //GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
 
             // 0.5秒後にエフェクトを消す
             //Destroy(effect, 0.5f);
 
-            // 敵のHPを１ずつ減少させる
+            // 敵のHPを20ずつ減少
             BossEnemyHP -= 20;
 
             //animator.SetTrriger("isDamage");
 
-            // ミサイルを削除する
+            // ミサイルを削除
             Destroy(other.gameObject);
 
-            // 敵のHPが０になったら敵オブジェクトを破壊する。
+            // 敵のHPが０になったら敵オブジェクトを破壊
             if (BossEnemyHP == 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
             {
                 animator.SetTrigger("death");
-
+                // 4.5秒後に実行
                 Invoke("DeleteEnemy", 4.5f);
 
-                // 破壊の効果音を出す
+                // 破壊の効果音
                 //AudioSource.PlayClipAtPoint(destroySound, transform.position);
             }
         }
@@ -63,17 +63,29 @@ public class BossEnemy : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        // プレイヤーの弾が当たったら
         if (hit.gameObject.tag == "Shell")
         {
+            //スライダー(HP)を-5
             slider.value -= 5.0f;
-            Debug.Log("Hit"); // ログを表示する
+            // ログを表示
+            Debug.Log("Hit");
+            // HPが0になったら
+            if (slider.value <= 0f)
+            {
+                // Deathアニメーション再生
+                animator.SetTrigger("death");
+                // 4秒後に実行
+                Invoke("SceneChange", 4.0f);
+            }
         }
     }
 
     void DeleteEnemy()
     {
-        // 親オブジェクトを破壊する（ポイント；この使い方を覚えよう！）
+        // 親オブジェクトを破壊
         Destroy(transform.root.gameObject);
+        // ゲームクリア画面移行
         SceneManager.LoadScene("GameClear");
     }
 }

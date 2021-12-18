@@ -116,12 +116,12 @@ namespace StarterAssets
 
 		private void AssignAnimationIDs()
 		{
-			animIDSpeed = Animator.StringToHash("Speed");
-			animIDGrounded = Animator.StringToHash("Grounded");
-			animIDJump = Animator.StringToHash("Jump");
-			animIDFreeFall = Animator.StringToHash("FreeFall");
+			animIDSpeed       = Animator.StringToHash("Speed");
+			animIDGrounded    = Animator.StringToHash("Grounded");
+			animIDJump        = Animator.StringToHash("Jump");
+			animIDFreeFall    = Animator.StringToHash("FreeFall");
 			animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
-			animIDDeath = Animator.StringToHash("Death");
+			animIDDeath       = Animator.StringToHash("Death");
 		}
 
 		private void GroundedCheck()
@@ -142,12 +142,12 @@ namespace StarterAssets
 			//入力があり、カメラの位置が固定されていない場合
 			if (input.look.sqrMagnitude >= threshold && !LockCameraPosition)
 			{
-				cinemachineTargetYaw += input.look.x * Time.deltaTime * Sensitivity;
+				cinemachineTargetYaw   += input.look.x * Time.deltaTime * Sensitivity;
 				cinemachineTargetPitch += input.look.y * Time.deltaTime * Sensitivity;
 			}
 
 			//回転をクランプして、値が360度に制限されるようにします
-			cinemachineTargetYaw = ClampAngle(cinemachineTargetYaw, float.MinValue, float.MaxValue);
+			cinemachineTargetYaw   = ClampAngle(cinemachineTargetYaw, float.MinValue, float.MaxValue);
 			cinemachineTargetPitch = ClampAngle(cinemachineTargetPitch, BottomClamp, TopClamp);
 
 			//Cinemachineはこの目標に従います
@@ -201,7 +201,6 @@ namespace StarterAssets
 					transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
 				}
 			}
-
 
 			Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
 
@@ -295,7 +294,7 @@ namespace StarterAssets
 		private void OnDrawGizmosSelected()
 		{
 			Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
-			Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
+			Color transparentRed   = new Color(1.0f, 0.0f, 0.0f, 0.35f);
 
 			if (Grounded) Gizmos.color = transparentGreen;
 			else Gizmos.color = transparentRed;
@@ -315,25 +314,36 @@ namespace StarterAssets
 
 		private void OnControllerColliderHit(ControllerColliderHit hit)
 		{
+			// 敵の弾に当たったら
             if (hit.gameObject.tag == "Projectile")
             {
-                slider.value -= 0.05f;
+				// スライダー(HP)を-0.05
+				slider.value -= 0.05f;
+				// デバッグ表示
                 Debug.Log("Hit"); // ログを表示する
+				// スライダー(HP)が0になったら
 				if (slider.value <= 0f)
                 {
+					// Deathアニメーション再生
 					animator.SetTrigger("death");
+					// 4秒後に実行
 					Invoke("SceneChange", 4.0f);
 				}
             }
+			// アイテムを拾ったら
 			if (hit.gameObject.tag == "Item")
             {
+				// スライダー(HP)を+5
 				slider.value += 0.5f;
+				// デバッグ表示
 				Debug.Log("Heel");
+				// オブジェクトを破壊
 				hit.gameObject.SetActive(false);
             }
 		}
 		void SceneChange()
         {
+			// ゲームオーバーに移行
 			SceneManager.LoadScene("GameOver");
 		}
 	}
