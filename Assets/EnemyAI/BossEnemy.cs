@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -12,6 +13,14 @@ public class BossEnemy : MonoBehaviour
     //public AudioClip destroySound;
 
     public Animator animator;
+
+    Slider slider;
+
+    private void Start()
+    {
+        slider = GameObject.Find("BossHP").GetComponent<Slider>();
+        slider.value = 1;
+    }
 
     public void Shoot()
     {
@@ -49,6 +58,15 @@ public class BossEnemy : MonoBehaviour
                 // îjâÛÇÃå¯â âπÇèoÇ∑
                 //AudioSource.PlayClipAtPoint(destroySound, transform.position);
             }
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "Shell")
+        {
+            slider.value -= 5.0f;
+            Debug.Log("Hit"); // ÉçÉOÇï\é¶Ç∑ÇÈ
         }
     }
 

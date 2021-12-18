@@ -96,7 +96,7 @@ namespace StarterAssets
 			jumpTimeoutDelta = JumpTimeout;
 			fallTimeoutDelta = FallTimeout;
 
-			slider = GameObject.Find("Slider").GetComponent<Slider>();
+			slider = GameObject.Find("PlayerHP").GetComponent<Slider>();
 			slider.value = 1;
 		}
 
