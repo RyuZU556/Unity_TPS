@@ -41,11 +41,12 @@ public class Enemy : MonoBehaviour
             // 敵のHPが０になったら敵オブジェクトを破壊する。
             if (enemyHP == 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
             {
+                // Deathアニメーション再生
                 animator.SetTrigger("death");
-
+                // 4.5秒後に実行
                 Invoke("DeleteEnemy", 4.5f);
 
-                // 破壊の効果音を出す
+                // 破壊の効果音
                 //AudioSource.PlayClipAtPoint(destroySound, transform.position);
             }
         }
@@ -53,7 +54,7 @@ public class Enemy : MonoBehaviour
 
     void DeleteEnemy()
     {
-        // 親オブジェクトを破壊する（ポイント；この使い方を覚えよう！）
+        // 親オブジェクトを破壊
         Destroy(transform.root.gameObject);
     }
 }

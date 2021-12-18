@@ -16,6 +16,7 @@ public class AttackBehavior : StateMachineBehaviour
     {
         animator.transform.LookAt(player);
         float distance = Vector3.Distance(animator.transform.position, player.position);
+        // プレイヤーが離れたら攻撃を終了する
         if (distance > 20) 
             animator.SetBool("isAttacking", false);
     }
