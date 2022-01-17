@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateCube : MonoBehaviour
+public class RotateItem : MonoBehaviour
 {
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 0));
+        transform.Rotate(new Vector3(0, 0, 1));
     }
 }

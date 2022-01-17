@@ -317,13 +317,17 @@ namespace StarterAssets
 			// 敵の弾に当たったら
             if (hit.gameObject.tag == "Projectile")
             {
-				// スライダー(HP)を-0.05
+				// スライダー(HP)を減らす
 				slider.value -= 0.05f;
 				// デバッグ表示
-                Debug.Log("Hit"); // ログを表示する
+                //Debug.Log("Hit"); // ログを表示する
 				// スライダー(HP)が0になったら
 				if (slider.value <= 0f)
                 {
+					// ジャンプスピードを0にする
+					JumpHeight = 0.0f;
+					// 移動スピードを0にする
+					MoveSpeed = 0.0f;
 					// Deathアニメーション再生
 					animator.SetTrigger("death");
 					// 4秒後に実行
@@ -333,10 +337,10 @@ namespace StarterAssets
 			// アイテムを拾ったら
 			if (hit.gameObject.tag == "Item")
             {
-				// スライダー(HP)を+5
+				// スライダー(HP)を増やす
 				slider.value += 0.5f;
 				// デバッグ表示
-				Debug.Log("Heel");
+				//Debug.Log("Heel");
 				// オブジェクトを破壊
 				hit.gameObject.SetActive(false);
             }

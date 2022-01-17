@@ -16,7 +16,6 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform spawnBulletPosition;
     [SerializeField] private Transform vfxHitGreen;
     [SerializeField] private Transform vfxHitRed;
-    //public int damageAmount = 20;
 
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
@@ -35,19 +34,10 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
-        //Transform hitTransform = null;
         if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
         {
             debugTransform.position = raycastHit.point;
             mouseWorldPosition = raycastHit.point;
-            //hitTransform = raycastHit.transform;
-
-            //Enemy e = raycastHit.transform.GetComponent<Enemy>();
-            //if (e != null)
-            //{
-            //    e.TakeDamage(damageAmount);
-            //    return;
-            //}
         }
         if (starterAssetsInputs.aim)
         {
@@ -72,19 +62,6 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         if(starterAssetsInputs.shoot)
         {
-            //if (hitTransform != null)
-            //{
-            //    if (hitTransform.GetComponent<BulletTarget>() != null)
-            //    {
-            //        // “–‚½‚Á‚½‚ç
-            //        Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
-            //    }
-            //    else
-            //    {
-            //        // ŠO‚ê‚½‚ç
-            //        Instantiate(vfxHitRed, transform.position, Quaternion.identity);
-            //    }
-            //}
             Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
             Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
             starterAssetsInputs.shoot = false;
