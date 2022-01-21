@@ -769,6 +769,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 513
   PlayerHP: 100
+  HeelSound: {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
   CinemachineCameraTarget: {fileID: 915298579}
   TopClamp: 70
   BottomClamp: -30
@@ -941,6 +942,7 @@ MonoBehaviour:
   spawnBulletPosition: {fileID: 2091544929}
   vfxHitGreen: {fileID: 400002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
   vfxHitRed: {fileID: 400002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
+  ShotSaound: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
 --- !u!4 &218641928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258, type: 3}

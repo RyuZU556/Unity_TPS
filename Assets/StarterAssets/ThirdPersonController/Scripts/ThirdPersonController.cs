@@ -14,8 +14,8 @@ namespace StarterAssets
 	public class ThirdPersonController : MonoBehaviour
 	{
 		//プレイヤーヘッダー
-		public float MoveSpeed = 2.0f;              //キャラクターの移動速度
-		public float SprintSpeed = 5.335f;          //キャラクターの全力疾走速度
+		public float MoveSpeed = 5.0f;              //キャラクターの移動速度
+		public float SprintSpeed = 10.0f;          //キャラクターの全力疾走速度
 		public float RotationSmoothTime = 0.12f;    //キャラクターが顔の移動方向に回転する速度
 		public float SpeedChangeRate = 10.0f;       //加速と減速
 		public float Sensitivity = 1f;
@@ -31,6 +31,10 @@ namespace StarterAssets
 		public float GroundedRadius = 0.28f;        //接地されたチェックの半径
 		public LayerMask GroundLayers;              //キャラクターが地面として使用するレイヤー
 		public int PlayerHP = 100;
+
+		// サウンド関連
+		public AudioClip HeelSound;
+		AudioSource audioSouce;
 
 		//シネマシンヘッダー
 		public GameObject CinemachineCameraTarget;  //カメラがフォローするCinemachine仮想カメラに設定されたフォローターゲット
@@ -98,6 +102,8 @@ namespace StarterAssets
 
 			slider = GameObject.Find("PlayerHP").GetComponent<Slider>();
 			slider.value = 1;
+
+			audioSouce = GetComponent<AudioSource>();
 		}
 
 		private void Update()
@@ -160,7 +166,6 @@ namespace StarterAssets
 			float targetSpeed = input.sprint ? SprintSpeed : MoveSpeed;
 
 			//取り外し、交換、反復が簡単にできるように設計された単純な加速と減速
-
 			//入力がない場合は、目標速度を0に設定します
 			if (input.move == Vector2.zero) targetSpeed = 0.0f;
 
@@ -339,11 +344,11 @@ namespace StarterAssets
             {
 				// スライダー(HP)を増やす
 				slider.value += 0.5f;
-				// デバッグ表示
-				//Debug.Log("Heel");
 				// オブジェクトを破壊
 				hit.gameObject.SetActive(false);
-            }
+				// サウンド再生
+				audioSouce.PlayOneShot(HeelSound);
+			}
 		}
 		void SceneChange()
         {
